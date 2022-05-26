@@ -19,8 +19,8 @@
                 </p>
                 {% else %}
                 <p>
-                    <form action="{{ url_for('unfollow', username=username) }}" method="post">
-                        {{ form.hidden_tag }}
+                    <form action="{{ url_for('unfollow', username=user.username) }}" method="post">
+                        {{ form.hidden_tag() }}
                         {{ form.submit(value='Unfollow') }}
                     </form>
                 </p>
