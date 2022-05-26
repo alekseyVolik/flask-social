@@ -103,7 +103,7 @@ def edit_profile():
     return render_template('edit_profile.html', title='Edit Profile', form=form)
 
 
-@app.route('/follow/<username>', method=['POST'])
+@app.route('/follow/<username>', methods=['POST'])
 @login_required
 def follow(username):
     form = EmptyForm()
