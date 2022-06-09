@@ -10,3 +10,4 @@ class Config(object):
         'DATABASE_URL', 'sqlite:///' + os.path.join(basedir, 'app.db')
     )
     SQLALCHEMY_TRACK_MODIFICATION = False
+    POSTS_PER_PAGE = 25
