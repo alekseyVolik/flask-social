@@ -1,4 +1,5 @@
 from flask import Flask
+from flask import request
 from app.config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -20,3 +21,8 @@ login.login_view = 'login'
 
 
 from app import routes, models, errors
+
+
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
